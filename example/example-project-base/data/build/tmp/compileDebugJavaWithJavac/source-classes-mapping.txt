@@ -1,0 +1,8 @@
+com/huyhuynh/data/local/MyDatabase_Impl.java
+ com.huyhuynh.data.local.MyDatabase_Impl
+ com.huyhuynh.data.local.MyDatabase_Impl$1
+com/huyhuynh/data/BuildConfig.java
+ com.huyhuynh.data.BuildConfig
+com/huyhuynh/data/local/dao/TodoEntityDao_Impl.java
+ com.huyhuynh.data.local.dao.TodoEntityDao_Impl
+ com.huyhuynh.data.local.dao.TodoEntityDao_Impl$1

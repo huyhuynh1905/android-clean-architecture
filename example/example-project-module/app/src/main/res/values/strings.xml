@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">android-clean-architecture</string>
+    <string name="edt_hint_enter_description">Nhập nội dung</string>
+    <string name="edt_hint_enter_tittle">Nhập tiêu đề</string>
+</resources>

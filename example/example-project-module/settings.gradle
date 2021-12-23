@@ -1,0 +1,4 @@
+rootProject.name = "android-clean-architecture"
+include ':app'
+include ':domain'
+include ':data'

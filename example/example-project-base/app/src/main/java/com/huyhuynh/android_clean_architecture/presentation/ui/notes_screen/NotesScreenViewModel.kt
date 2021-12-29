@@ -9,8 +9,4 @@ import javax.inject.Inject
 class NotesScreenViewModel @Inject constructor(application: Application):BaseViewModel(application) {
     init {
     }
-
-    fun onClickAddFab(){
-        Toast.makeText(app.applicationContext,"Add Note", Toast.LENGTH_SHORT).show()
-    }
 }

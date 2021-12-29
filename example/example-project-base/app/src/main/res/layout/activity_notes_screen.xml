@@ -8,10 +8,30 @@
         name="viewModel"
         type="com.huyhuynh.android_clean_architecture.presentation.ui.notes_screen.NotesScreenViewModel" />
   </data>
-  <androidx.constraintlayout.widget.ConstraintLayout
+  <androidx.coordinatorlayout.widget.CoordinatorLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       tools:context=".presentation.ui.notes_screen.NotesScreenActivity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:onClick="@{() -> viewModel.onClickAddFab()}"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:layout_gravity="end|bottom"
+        app:rippleColor="@color/bgk_fab_ripple"
+        android:src="@drawable/icon_add"
+        app:tint="@color/white"
+        app:fabCustomSize="@dimen/fab_custom_size"
+        app:backgroundTint="@color/bgk_fab"
+        android:contentDescription="@string/submit"
+        android:layout_margin="@dimen/fab_margin" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_notes"
+        android:layoutAnimation="@anim/layout_anim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+  </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

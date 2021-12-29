@@ -2,7 +2,9 @@ package com.huyhuynh.android_clean_architecture.presentation.ui.notes_screen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
+import com.google.android.material.snackbar.Snackbar
 import com.huyhuynh.android_clean_architecture.BR
 import com.huyhuynh.android_clean_architecture.R
 import com.huyhuynh.android_clean_architecture.databinding.ActivityNotesScreenBinding

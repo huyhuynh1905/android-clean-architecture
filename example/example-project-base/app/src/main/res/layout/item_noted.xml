@@ -1,44 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    >
     <data>
         <variable
-            name="viewModel"
-            type="com.huyhuynh.android_clean_architecture.presentation.ui.add_notes_screen.AddNoteViewModel" />
+            name="noteEntity"
+            type="com.huyhuynh.android_clean_architecture.domain.model.NoteEntity" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_size_10"
         tools:context=".presentation.ui.add_notes_screen.AddNoteActivity">
-        <EditText
+        <TextView
+            android:id="@+id/tvTitleNote"
             android:layout_marginLeft="@dimen/padding_size_10"
             android:layout_marginRight="@dimen/padding_size_10"
-            android:hint="Tiêu đề"
-            android:text="@={viewModel.titleNote}"
+            android:text="@{noteEntity.tittle}"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <EditText
+        <TextView
+            android:id="@+id/tvContent"
             android:layout_marginTop="@dimen/padding_size_10"
             android:layout_marginLeft="@dimen/padding_size_10"
             android:layout_marginRight="@dimen/padding_size_10"
-            android:hint="Nội dung"
-            android:text="@={viewModel.contentNote}"
-            android:gravity="top"
-            android:inputType="text|textMultiLine"
+            android:text="@{noteEntity.content}"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="wrap_content"/>
 
         <Button
-            android:text="Thêm Vào Danh Sách"
-            android:onClick="@{()->viewModel.onClickAddNote()}"
+            android:id="@+id/btnDelete"
+            android:text="Xoá"
             android:layout_marginLeft="@dimen/padding_size_10"
             android:layout_marginRight="@dimen/padding_size_10"
+            android:layout_marginTop="@dimen/padding_size_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+
 </layout>

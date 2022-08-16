@@ -8,8 +8,11 @@ import com.huyhuynh.android_clean_architecture.domain.repository.NoteRepository
 import com.huyhuynh.android_clean_architecture.domain.use_case.*
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+@InstallIn(SingletonComponent::class)
 @Module
 object AppModule {
 
@@ -35,4 +38,10 @@ object AppModule {
         deleteNoteUsecase = DeleteNoteUsecase(noteRepository),
         getNotesUsecase = GetNotesUsecase(noteRepository)
     )
+
+    @Provides
+    @Singleton
+    fun providerNotes(application: Application) = providerNoteUsecase(providerNoteRepository(providerDatabase(application)))
+
+
 }

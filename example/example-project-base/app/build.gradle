@@ -14,8 +14,9 @@ android {
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //TODO: remove this after migration to Hilt
+        javaCompileOptions.annotationProcessorOptions.arguments['dagger.hilt.disableModulesHaveInstallInCheck'] = 'true'
     }
 
     buildTypes {
@@ -35,7 +36,11 @@ android {
         dataBinding true
     }
 }
-
+kapt {
+    javacOptions {
+        option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+    }
+}
 dependencies {
 
     //noinspection GradleDependency
@@ -67,9 +72,12 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.4.2"
 
     // Dagger
-    implementation 'com.google.dagger:dagger:2.35.1'
+    implementation 'com.google.dagger:dagger:2.37'
     implementation 'com.google.dagger:dagger-android:2.35.1'
     implementation 'com.google.dagger:dagger-android-support:2.33'
-    kapt 'com.google.dagger:dagger-compiler:2.33'
+    kapt 'com.google.dagger:dagger-compiler:2.35.1'
     kapt 'com.google.dagger:dagger-android-processor:2.33'
+    implementation "com.google.dagger:hilt-android:2.37"
+    kapt "com.google.dagger:hilt-compiler:2.37"
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
 }

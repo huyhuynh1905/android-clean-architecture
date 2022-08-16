@@ -13,6 +13,7 @@ abstract class BaseBindingActivity<V: ViewDataBinding, M: BaseViewModel> : BaseA
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewDataBinding = DataBindingUtil.setContentView(this,layoutResource)
+        setContentView(viewDataBinding?.root)
         viewDataBinding?.apply {
             setVariable(bindingVariable,viewModel)
             executePendingBindings()
@@ -26,4 +27,5 @@ abstract class BaseBindingActivity<V: ViewDataBinding, M: BaseViewModel> : BaseA
         super.onDestroy()
         viewModel.activityDestroyed()
     }
+
 }
